@@ -1,0 +1,721 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700&display=swap');
+
+/* Define una serie de variables de css personalizadas */
+:root {
+    --gold1: #3bad4a;
+    --gold2: #16df41;
+    --gray:  #ffffff80;
+    --gray2: #f7d9d990;
+    --black1: #000000;
+    --black2: #272727;
+    /* Definición de sombra con desplazamiento y enfoque */
+    --shadow: 0 8px 8px;
+    --color-shadow: #00000033; 
+}
+
+/* Selector universal */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0 auto;
+    height: auto;
+}
+
+.container--modifier {
+    width: 60%;
+}
+
+.hero {
+    width: 100%;
+    /* Altura minima del dispositivo */
+    min-height: 100vh;
+    background: #000000;
+    margin-bottom: 60px;
+}
+
+.nav-hero {
+    color: #fff;
+    height: 70px;
+    /* Hacemos que el borde este visualizado */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* La clase en cuestión hereda la altura de la clase padre */
+    height: inherit;
+    padding: 0px;
+}
+
+.logo-name {
+    font-size: 24px;
+}
+
+.link {
+    /* Esto permitirá que se mantengan alineados */
+    display: inline-block;
+    color: inherit;
+    text-decoration: none;
+    font-weight: 300;
+    padding: 10px;
+}
+
+.link-active {
+    color: var(--gold1);
+    font-weight: 700;
+}
+
+.point {
+    color: red;
+}
+
+.hero-main {
+    /* decimos que sea flexible a los diferentes contenidos que hay en la pantalla */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+}
+
+.mockup {
+    /* usamos object para que el elemento se adapte a la pantalla */
+    object-fit: cover;
+    width: 48%;
+    min-height: 90vh;
+}
+
+.hero-textos {
+    width: 48%;
+}
+
+.title {
+    font-size: 56px;
+    font-weight: 400;
+    color: white;
+}
+
+.title-active {
+    color: var(--gold2);
+    font-weight: 700;
+}
+
+.copy {
+    font-size: 24px;
+    color: var(--gray);
+    text-shadow: var(--shadow) var(--color-shadow);
+    margin: 15px 0;
+}
+
+.copy-active {
+    font-weight: 700;
+}
+/* Diseño a botón */
+.cta {
+    padding: 20px 30px;
+    display: inline-block;
+    background: linear-gradient(180deg, #f7ce90 0%, #f4bd76 100%);
+    text-decoration: none;
+    color: var(--black2);
+    font-weight: 700;
+    box-shadow: var(--shadow) var(--color-shadow);
+    border-radius: 15px;
+}
+/* Resalto una palabra */
+.color-interactive{
+    color: red;
+    font-weight: 900;
+}
+.services{
+    background: #fafafa;
+    margin-top: 100px;
+}
+
+.subtitle{
+    font-size: 42px;
+}
+
+.subtitle-modifier{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1000px;
+    margin-bottom: 16px;
+}
+
+.copy-section{
+    color: var(--black2);
+    font-size: 22px;
+    line-height: 32px;
+    margin-bottom: 60px;
+    max-width: 800px;
+}
+
+.copy-section-modifier{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 32px;
+}
+
+.container-cards{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 80px;
+}
+
+/* Determinamos el estilo de fondo de cada tarjeta */
+.card{
+    width: 30%;
+    padding: 30px 0;
+    overflow: hidden;
+    background: linear-gradient(180deg, var(--black2) 0%, var(--black1) 100%);
+    border-radius: 10px;
+    position: relative;
+    text-align: center;
+    margin-bottom: 60px;
+    max-height: 800px;
+    /* Aplica una sombra al elemento utilizando la propiedad box-shadow */
+    box-shadow: 0 0 6px var(--color_shadow);
+/*
+   - 0 0: Desplazamiento horizontal y vertical de la sombra, en este caso, no hay desplazamiento (sombra centrada).
+   - 6px: Radio de difuminado de la sombra, creando un efecto suave en un área de 6 píxeles alrededor del elemento.
+   - var(--color_shadow): Color de la sombra obtenido de la variable CSS --color_shadow.
+*/
+}
+/* Extraemos las etiquetas div en la clase card */
+.card div {
+    /* Aplicamos una funcionalidad que borra la cara de la tarjeta por la parte de atrás */
+    backface-visibility: hidden;
+    /* Hacemos que ese efecto tenga una transición de 1 segundo */
+    transition: 1s;
+}
+
+.card .front {
+    /*La cara frontal de la tarjeta iniciará en 0 grados, lo que quiere decir que será visible*/
+    /* Además, la perspectiva hacer referencia como al nivel de profundidad en 3d en la que el usuario verá el efecto */
+    transform: perspective(800px) rotateY(0deg);
+}
+
+.card .back {
+    /*La cara trasera de la tarjeta iniciará en 180 grados, lo que quiere decir que estará invisible al inicio*/
+    /* Además, la perspectiva hacer referencia como al nivel de profundidad en 3d en la que el usuario verá el efecto */
+    /* Cada elemento en html es único, por lo tanto yo no estoy haciendo que un elemento tenga 2 caras diferentes, sino que el primer elemento sea reemplazado por un segundo elemento de una forma animada */
+    transform: perspective(300px) rotateY(180deg);
+    top: 30px;
+    /* Esto lo colocamos para que no se mueva sin importar lo que pase */
+    position: absolute;
+}
+/* Realizamos una animación básica de girado de tarjetas haciendo que la vista frontal se mueva a 180 grados lo que quiere decir que no se verá más la vista*/
+.card:hover .front {
+    transform: perspective(300px) rotateY(180deg);
+}
+/* Realizamos una animación básica de girado de tarjetas haciendo que la vista trasera se mueva a 360 grados lo que quiere decir que pasará a ser la vista de la tarjeta visible*/
+.card:hover .back{
+    transform: perspective(300px) rotateY(360deg);
+}
+
+.card-img{
+    width: 90%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.cards-text{
+    text-align: left;
+    width: 90%;
+    margin:0 auto;
+}
+
+.card-back-text {
+    font-size: 20px;
+}
+
+.card-list{
+    color: var(--gold2);
+    font-weight: 700;
+    /* Establece márgenes en las direcciones superior, derecha, inferior e izquierda del elemento */
+    margin: 25px 0 12px;
+/*
+   - 25px: Margen superior de 25 píxeles.
+   - 0: No se aplican márgenes en los lados derecho e izquierdo.
+   - 12px: Margen inferior de 12 píxeles.
+*/
+
+    font-size: 18px;
+}
+
+
+.card-title{
+    font-size: 40px;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.card-copy{
+    color: var(--gray2);
+    margin-bottom: 16px;
+}
+
+.card-button{
+    display: block;
+    background: linear-gradient(180deg, #3052e9 0%, #0d02b1 100%);
+    border-radius: 6px;
+    text-decoration: none;
+    width: 100%;
+    color: var(--black1);
+    font-weight: 700;
+    text-align: center;
+    padding: 12px 0;
+}
+
+.card-date{
+    color: var(--gold2);
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.container-bg{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Aquí estamos realizando los banners de nuestras historias de ransomwares */
+.background{
+    width: 68%;
+    height: 290px;
+    border-radius: 10px;
+    position: relative;
+    margin-bottom: 60px;
+}
+
+.background-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+.background-text{
+    position: absolute;
+    width: 100%;
+    bottom: 30px;
+    left: 15px;
+    color: #fff;
+}
+
+.background-title{
+    font-size: 24px;
+    margin-bottom: 4px;
+}
+/* Aquí comenzamos la parte de los especialistas en ciberseguridad */
+.testimony{
+    background: #fafafa;
+    margin-top: 100px;
+    
+}
+
+.testimony-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   /* Controla el comportamiento de envoltura de elementos en un contenedor flexible */
+    flex-wrap: wrap;
+    /*
+   - wrap: Permite que los elementos flexibles se envuelvan en una nueva línea si no caben en el ancho del contenedor.
+    */
+    margin-bottom: 250px;
+}
+
+.testimony-card{
+    width: 30%;
+    height: 500px;
+    background: linear-gradient(180deg, var(--black2) 0%, var(--black1) 100%);
+    border-radius: 10px;
+    position: relative;
+    margin-bottom: 30px;
+    align-items: center; /*Esto lo puse yo*/
+}
+
+.testimony-img{
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.testimony-copy{
+    position: absolute;
+    bottom: 20px;
+    left: 5%;
+    width: 90%;
+    background: linear-gradient(180deg, var(--black2) 0%, var(--black1) 100%);
+    color: #fff;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: var(--shadow) var(--color_shadow);
+    padding: 15px 8px;
+    display: flex;
+    align-items: center;
+}
+
+.testimony-copy-modifier{
+    background: none;
+    box-shadow: none;
+}
+
+.testimony-logo{
+    font-size: 40px;
+    margin-right: 15px;
+    display: inline-block;
+}
+
+.testimony-name{
+    font-size: 24px;
+    line-height:28px;
+}
+
+.testimony-position{
+    color: var(--gray);
+}
+
+.testimony-text{
+    padding: 40px 0;
+    width: 90%;
+    margin: 0 auto;
+    color: #fff;
+}
+
+.generation-logo{
+    margin: 10px;
+    margin-bottom: 20px;
+    height: 80px;
+    width: 270px;
+    margin-left: 40px;
+}
+
+
+.testimony-history{
+    font-size: 21px;
+    font-weight: 300;
+}
+
+
+.testimony-info{
+    width: 70%;
+}
+
+.logo-picture{
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    object-position: center top;
+}
+
+/* check */
+
+.check{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+}
+
+.check-item{
+    width: 30%;
+    padding-right: 10px;
+    display: flex;
+    border-right: 2px solid var(--black2);
+}
+
+.bx-check{
+    background: linear-gradient(180deg, var(--black2) 0%, var(--black1) 100%);
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    margin-right: 20px;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 40px;
+}
+
+.check-number{
+    font-weight: 700;
+}
+
+.check-copy{
+    font-weight: 300;
+}
+
+.newsletter{
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 40px;
+    height: auto;
+    font-family: inherit;
+    position: relative;
+    border-radius: 6px;
+    margin-bottom: 200px;
+}
+
+.newsletter-modifier{
+    margin: 0;
+    width: 80%;
+}
+
+.newsletter-input{
+    width: 100%;
+    height: 100%;
+    padding: 22px 10px;
+    outline: none;
+    font-family: inherit;
+    border-radius: 6px;
+    border: 1px solid var(--black1)
+}
+
+.newsletter-submit{
+    position: absolute;
+    right: 8px;
+    top: 10%;
+    height: 80%;
+    background: linear-gradient(180deg, var(--black2) 0%, var(--black1) 100%);
+    color: #fff;
+    padding: 0 15px;
+    border: none;
+    border-radius: 6px;
+    font-family: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* Parte del footer y todas las redes de contacto */
+.footer{
+    background: #fafafa;
+}
+
+.footer-caption{
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: space-evenly;
+}
+
+
+.title-footer{
+    font-size: 24px;
+    margin-bottom: 32px;
+}
+
+.download{
+    width: 50%;
+}
+
+.download-app{
+    display: flex;
+}
+
+.download-item{
+    display: flex;
+    padding: 18px 12px;
+    border-radius: 6px;
+    border: 1px solid var(--black2);
+    width: 42%;
+    align-items: center;
+    margin-right: 20px;
+    margin-bottom: 16px;
+}
+
+.download-logo{
+    font-size: 40px;
+    margin-right: 20px;
+}
+
+.download-title{
+    font-size: 18px;
+}
+
+.footer-copy{
+    width: 100%;
+    color: var(--black2);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.copyright{
+    width: 100%;
+}
+
+.politica-privacidad{
+    color: inherit;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.politica-privacidad:hover{
+    text-decoration: underline;
+}
+
+.politica-privacidad-margin{
+    margin-right: 10px;
+    margin-bottom: 80px;
+}
+
+.get-email{
+    width: 50%;
+}
+
+.socialmedia{
+    margin-top: 24px;
+    display: flex;
+    color: var(--black2);
+}
+
+.socialmedia-icon{
+    font-size: 18px;
+    margin-right: 30px;
+    display: inline-block;
+}
+
+.socialmedia-legend{
+    color: var(--black2);
+    margin-right: 16px;
+}
+
+.contact{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    color: #fff;
+}
+
+.item-contact{
+    width: 25%;
+    padding: 60px 0;
+    text-align: center;
+    background: linear-gradient(180deg, var(--black2) 0%, var(--black1) 100%);
+    margin-bottom: 30px;
+}
+
+
+.item-contact-gold{
+    background: linear-gradient(180deg, #3209c7 0%, #3209c7 100%);
+    color: black;
+}
+
+.contact-icon{
+    font-size: 14px;
+    color: white;
+    line-height: 20px;
+    margin-right: 4px;
+}
+
+.contact-icon-modifier{
+    color: var(--black1);
+}
+
+.contact-title{
+    font-size: 16px;
+    line-height: 20px;
+}
+/* Esto es una regla de media query que se aplica a dispositivos con una anchura máxima de 900 píxeles. Esta regla de media query modifica el tamaño de los elementos y el espaciado entre ellos para que se adapten mejor a los dispositivos de menor tamaño. */
+@media screen and (max-width:900px){
+    .mockup{
+        width: 600px;
+        height: auto;
+    }
+
+    .title{
+        font-size: 50px;
+    }
+
+    .copy{
+        font-size: 22px;
+    }
+
+    .cta{
+        padding: 15px 22px;
+    }
+
+    .container-cards{
+        justify-content: space-evenly;
+    }
+
+    .services .card{
+        width: 45%;
+    }
+
+    .background{
+        width: 52%;
+    }
+
+    .card{
+        width: 42%;
+    }
+
+    .testimony-container{
+        justify-content: space-evenly;
+    }
+
+    .testimony-card{
+        width: 45%;
+    }
+
+    .check-item{
+        width: 45%;
+        margin-bottom: 35px;
+    }
+
+    .newsletter{
+        width: 80%;
+    }
+
+    .download{
+        width: 100%;
+    }
+
+    .download-app{
+        justify-content: space-between;
+    }
+
+    .download-item{
+        width: 45%;
+    }
+
+    .get-email{
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .socialmedia-icon{
+        font-size: 18px;
+    }
+
+    .socialmedia-legend{
+        font-size: 18px;
+    }
+}

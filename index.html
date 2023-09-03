@@ -1,0 +1,327 @@
+<!-- Especifica que estamos trabajando con un documento html, informa al navegador la vers de html -->
+<!DOCTYPE html>
+<!-- Especifica el lenguaje en el cual trabajaremos en el documento -->
+<html lang="en">
+<!-- Especificamos las rutas de los archivos externosde nuestro proyecto web -->
+<!-- Y especificamos las rutas de los archivos que vayamos a trabajar, como boxicons y sus links -->
+<head>
+    <!-- Esto nos permite ingresar caracters especiales en nuestro documento html -->
+    <meta charset="UTF-8">
+    <!-- Especificamos que este documento se pueda visualizar en diferentes dispositi ESTO NO ES RESPONSIVE -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título que va a aparecer en la pestaña del navegador -->
+    <title>World Wide Home</title>
+    <!-- Insertamos la url para poder trabajar los iconos de la pagina de boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- cuando trabajamos hojas de estilos css siempre le damos rel=stlesheet, le decimos que conecte la hoja de estilos -->
+    <!-- No cerramos porque se les llama self closing, ellas se cierran solas, y no necesitamos cerrarlas -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+</head>
+<!-- Vamos a introducir el contenido visible por el usuario -->
+<body>
+    <!-- <box-icon type='logo' name='github'></box-icon> -->
+    <header class="hero">
+        <!-- Para realizar la barra de navegación -->
+        <nav class="nav-hero">
+            <!-- Navegación del encabezado -->
+            <div class="container nav-container">
+                <div class="logo">
+                    <h2 class="logo-name">Notorious Security<span class="point">.</span></h2>
+                </div>
+                <!-- Enlaces de navegación -->
+                <div class="links">
+                    <!-- Crea hipervinculos # para que la redireccion sea estatica a la misma pagina-->
+                    <a href="#inicio" class="link">Inicio</a>
+                    <a href="#servicios" class="link">Información</a>
+                    <a href="#proyectos" class="link">Historias</a>
+                    <a href="#clientes" class="link color-interactive">Especialistas</a>
+                    <a href="#contacto" class="link link-active">Contacto</a>
+                </div>
+            </div>
+        </nav>
+        <!-- Sección principal del encabezado -->
+        <section class="container hero-main" id="inicio">
+            <!-- Textos y contenido destacado -->
+            <div class="hero-textos">
+                <h1 class="title">El mejor <span class="title-active">Canal Informativo.</span></h1>
+                <p class="copy">Te mantenemos informado sobre ransomwares para llevar tu seguridad al <span class="copy-active">siguiente nivel</span></p>
+                <a href="#" class="cta">Más información</a>
+            </div>
+            <!-- Imagen del encabezado, usar el alt como alternativo en caso de que la img no proyecte -->
+            <img src="img/terminal2.png" class="mockup" alt="alternativo">
+        </section>
+    </header>
+<main>
+    <section class="services" id="servicios">
+        <div class="container">
+            <h2 class="subtitle">Tipos de Ransomware<span class="point">.</span></h2>
+            <p class="copy-section">En esta sección <span class="color-interactive">INTERACTIVA</span> podrás informarte acerca de algunos tipos de ransomware que han venido surgiendo a lo largo de la historia</p>
+        
+        <!-- Específica que creará un contenedor para los artículos de la información -->
+        <!-- Los artículos se realizarán con una vista interactiva que proyecta una tarjeta con un frente y un revés -->
+        <article class="container-cards">
+            <div class="card">
+                <!-- Parte frontal de la tarjeta que muestra una breve historia del contenido-->
+                <div class="front">
+                    <img src="img/accesdenied.JPG" alt="not found" class="card-img">
+                    <div class="cards-text">
+                        <p class="card-list">¿Qué era y cómo surgió?</p>
+                        <h3 class="card-title">Bloqueo<span class="point">.</span></h3>
+                        <p class="card-copy">El ransomware de bloqueo es el tipo más antiguo de ransomware. Se introdujo por primera vez en la década de 1980 y ha evolucionado constantemente desde entonces.</p>
+                        <a href="#" class="card-button">Más información</a>
+                    </div>
+                </div>
+                <!-- Parte trasera de la tarjeta que muetra características -->
+                <div class="back">
+                    <div class="cards-text">
+                        <p class="card-list">Características y funcionamiento</p>
+                        <h3 class="card-title">Rescate<span class="point">.</span></h3>
+                        <p class="card-copy card-back-text">El ransomware de bloqueo suele bloquear el acceso al sistema operativo o a los archivos del sistema mediante la modificación de la configuración del sistema o la creación de un archivo de bloqueo. Los usuarios pueden verse obligados a pagar un rescate para recuperar el acceso.
+
+                        Por ejemplo, el ransomware de bloqueo puede modificar la configuración del sistema de modo que el usuario no pueda iniciar sesión.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Segunda tarjeta -->
+            <div class="card">
+                <!-- Parte frontal de la tarjeta que muestra una breve historia del contenido-->
+                <div class="front">
+                    <img src="img/ranpersonal.JPG" alt="not found" class="card-img">
+                    <div class="cards-text">
+                        <p class="card-list">¿Qué era y cómo surgió?</p>
+                        <h3 class="card-title">Cifrado<span class="point">.</span></h3>
+                        <p class="card-copy">El ransomware de cifrado se introdujo en la década de 2010 y se ha convertido rápidamente en el tipo más común de ransomware. Este ransomware incluía nuevas características.</p>
+                        <a href="#" class="card-button">Más información</a>
+                    </div>
+                </div>
+                <!-- Parte trasera de la tarjeta que muetra características -->
+                <div class="back">
+                    <div class="cards-text">
+                        <p class="card-list">Características y funcionamiento</p>
+                        <h3 class="card-title">Inaccesibilidad<span class="point">.</span></h3>
+                        <p class="card-copy card-back-text">El ransomware de cifrado cifra los archivos del usuario, haciendo que sean inaccesibles. Los usuarios pueden verse obligados a pagar un rescate para obtener la clave de descifrado.
+
+                        El ransomware de cifrado suele utilizar un algoritmo de cifrado fuerte, como AES o RSA, para cifrar los archivos del usuario. Los usuarios pueden intentar descifrar los archivos por sí mismos, pero esto puede ser muy difícil o imposible.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Tercera tarjeta -->
+            <div class="card">
+                <!-- Parte frontal de la tarjeta que muestra una breve historia del contenido-->
+                <div class="front">
+                    <img src="img/rancifrado.JPG" alt="not found" class="card-img">
+                    <div class="cards-text">
+                        <p class="card-list">¿Qué era y cómo surgió?</p>
+                        <h3 class="card-title">Personal<span class="point">.</span></h3>
+                        <p class="card-copy">El ransomware de doble extorsión se introdujo en 2019 y es una variante del ransomware de cifrado. Se considera que este ransomware fue creado por variantes dicidentes de WannaCry.</p>
+                        <a href="#" class="card-button">Más información</a>
+                    </div>
+                </div>
+                <!-- Parte trasera de la tarjeta que muetra características -->
+                <div class="back">
+                    <div class="cards-text">
+                        <p class="card-list">Características y funcionamiento</p>
+                        <h3 class="card-title">Extorsión<span class="point">.</span></h3>
+                        <p class="card-copy card-back-text">
+                            El ransomware de doble extorsión es una variante del ransomware de cifrado que cifra los archivos del usuario y luego roba información confidencial, como datos financieros o información personal. Los usuarios pueden verse obligados a pagar un rescate por la clave de descifrado y por no publicar la información confidencial robada, ya que, su objetivo es a nivel de usuario, con estos datos sensibles se consigue la extorsión.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </article>
+        </div>
+    </section>
+    <!-- Especificar la sección de historias del malware en particular -->
+    <section class="projects container" id="proyectos">
+        <h2 class="subtitle">Historias de ataques<span class="point">.</span></h2>
+        <p class="copy-section">Hemos colaborado con marcas reconocidas a nivel mundial</p>
+        <article class="container-bg">
+            <!-- Tarjeta con la fecha y una descripción breve de lo sucedido -->
+            <div class="card">
+                <div class="cards-text">
+                <h3 class="card-title">Archievus<span class="point">.</span></h3>
+                <p class="card-date">2006 - 2008</p>
+                <p class="card-copy">Archievus aumentó la dificultad de cifrado implementando el algoritmo rsa con mecanismo asimétrico de llave publica y privada para los archivos del dispositivo, se dirigía a "misdocumentos" y depositaba un archivo llamado howtogetyourfilesback.txt</p>
+                <a href="#" class="card-button">Conoce más historias</a>
+                </div>
+            </div>
+            <!-- Banner con imagenes relacionadas a la historia en cuestión -->
+            <div class="background">
+                <img src="img/1.jfif" alt="not found" class="background-img">
+                <div class="background-text">
+                    <h3 class="background-title">Métodos de cifrado</h3>
+                    <p class="background-copy">Las contraseñas privadas con las que cifraban la información tenía un largo de 30 carácteres</p>
+                </div>
+            </div>
+            <!-- Tarjeta con la fecha y una descripción breve de lo sucedido -->
+            <div class="card">
+                <div class="cards-text">
+                <h3 class="card-title">WannaCry<span class="point">.</span></h3>
+                <p class="card-date">2017 - 2019</p>
+                <p class="card-copy">En pocas semanas afectó a 300.000 ordenadores al propagarse por medio de sistemas windows a través de la vulnerabilidad eternal blue, mostraban su característica calavera en pantallas. </p>
+                <a href="#" class="card-button">Conoce más historias</a>
+                </div>
+            </div>
+            <!-- Banner con imagenes relacionadas a la historia en cuestión -->
+            <div class="background">
+                <img src="img/wannacry-modified.jpg" alt="not found" class="background-img">
+                <div class="background-text">
+                    <h3 class="background-title">WannaCry logró extorsionar a más de 1000 empresas</h3>
+                    <p class="background-copy">La vulnerabilidad del sistema operativo permitió acceder hasta la información de respaldo</p>
+                </div>
+            </div>
+        </article>
+    </section>
+    <!-- Especifica la sección de especialistas o aspirantes en el área de ciberseguridad -->
+    <section class="testimony" id="clientes">
+        <div class="container">
+            <h2 class="subtitle">Especialistas en el área<span class="point">.</span></h2>
+            <p class="copy-section">Contamos con el asesoramiento e información por parte de estos especialistas</p>
+        </div>
+
+        <div class="testimony-container">
+            <div class="testimony-card">
+                <img src="img/profesor.jfif" alt="not found" class="testimony-img">
+                <div class="testimony-copy">
+                    <i class='bx bxl-google testimony-logo'></i>
+                    <!-- Espacio para cargo de la persona e información -->
+                    <div class="testimony-info">
+                        <h3 class="testimony-name">Alex Hernández</h3>
+                        <p class="testimony-position">Especialista en Ciberseguridad</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimony-card">
+                <img src="img/snowden.jpg" alt="not found" class="testimony-img">
+                <div class="testimony-copy">
+                    <i class='bx bxl-apple testimony-logo'></i>
+                    <!-- Espacio para cargo de la persona e información -->
+                    <div class="testimony-info">
+                        <h3 class="testimony-name">Edward Snowden</h3>
+                        <p class="testimony-position">Auditor en Ciberseguridad</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimony-card">
+                <div class="testimony-text">
+                    <img src="img/gener.png" alt="not found" class="generation-logo">
+                    <p class="testimony-history">Desde que entré a Generation me ha invadido un sensación increíble de curiosidad intelectual por diversos temas en específico, entre ellos la ciberseguridad, considero que tener presente estos aspectos y orientar a otros es necesario para llevar una vida digital saludable.</p>
+                    <div class="testimony-copy testimony-modifier">
+                        <img src="img/3.jfif" alt="not found" class="testimony-logo logo-picture">
+                        <!-- Espacio para cargo de la persona e información -->
+                        <div class="testimony-info">
+                            <h3 class="testimony-name">Steven Mendez</h3>
+                            <p class="testimony-position">Entusiasta de ciberseguridad</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ESTA PARTE ES LA DE CONTACTO Y EL CÓDIGO SIGUIENTE QUE COMPARTIÓ EL PROFESOR -->
+        <!-- Recomienda los servicios al cliente mostrando la cantidad de proyectos exitosos en esta sección -->
+        <!-- Se le agrega un espacio específico en donde el usuario puede aceptar ser contactado -->
+        <section class="email container container-modifier" id="contacto">
+            <h2 class="subtitle subtitle-modifier">Somos tu mejor opción para darte información sobre malwares<span class="point">.</span></h2>
+
+            <p class="copy-section copy-section-modifier">Cientos de empresas a nivel global nos informan de numerosos ataques de Ransomware</p>
+            <!-- Especificamos la cantidad de plataformas que nos envían registros de presencias de malwares -->
+            <div class="check">
+                <div class="check-item">
+                    <i class='bx bx-check' ></i>
+                    <div class="check-numbers">
+                        <p class="check-number">+150</p>
+                        <p class="check-copy">Avast Antivirus</p>
+                    </div>
+                </div>
+                <div class="check-item">
+                    <i class='bx bx-check' ></i>
+                    <div class="check-numbers">
+                        <p class="check-number">+300</p>
+                        <p class="check-copy">Eset Antivirus</p>
+                    </div>
+                </div>
+                <div class="check-item">
+                    <i class='bx bx-check' ></i>
+                    <div class="check-numbers">
+                        <p class="check-number">+333</p>
+                        <p class="check-copy">Kaspersky Lab</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Espacio en el que el cliente puede digitar su correo de contacto para recibir noticias, usamos; input type -->
+            <form class="newsletter">
+                <input type="text" class="newsletter-input" placeholder="Ingresa tu email para recibir información">
+                <input type="submit" class="newsletter-submit" value="Comienza hoy">
+            </form>
+        </section>
+    </main>
+    <!-- Vamos a introducir los datos de contacto, métodos de descarga de aplicativo y redes sociales -->
+    <footer class="footer">
+        <div class="container footer-caption">
+            <section class="download">
+                <!-- Aquí añadimos las plataformas mobiles de descarga de la aplicación -->
+                <h3 class="title-footer">Descarga nuestra App</h3>
+                <div class="download-app">
+                    <div class="download-item">
+                        <i class='bx bxl-apple download-logo' ></i>
+                        <h4 class="download-title">App Store</h4>
+                    </div>
+                    <div class="download-item">
+                        <i class='bx bxl-play-store download-logo' ></i>
+                        <h4 class="download-title">Play Store</h4>
+                    </div>
+                </div>
+                <!-- Aquí específicamos los derechos reservados de la página y políticas de privacidad -->
+                <div class="footer-copy">
+                    <p class="copyright">Generation Program &copy; 2023 Todos los derechos reservados</p>
+    
+                    <a href="#" class="politica-privacidad politica-privacidad-margin">Politica de privacidad</a>
+                    <a href="#" class="politica-privacidad ">Terminos y condiciones</a>
+                </div>
+            </section>
+            <!-- Especificaremos otra sección de contacto para que el cliente introduzca su email -->
+            <section class="get-email">
+                <h3 class="title-footer">¿Estás listo para trabajar con nosotros?</h3>
+                <!-- Espacio en el que el cliente puede digitar su correo de contacto para recibir noticas, usamos input type -->
+                <form class="newsletter newsletter-modifier">
+                    <input type="text" class="newsletter-input" placeholder="Ingresa tu email para recibir información">
+                    <input type="submit" class="newsletter-submit" value="Comienza hoy">
+                </form>
+                <!-- Mostramos las redes de contacto de la página web -->
+                <div class="socialmedia">
+                    <p class="socialmedia-legend">Siguenos en:</p>
+                    <i class='socialmedia-icon bx bxl-facebook-circle'></i>
+                    <i class='socialmedia-icon bx bxl-linkedin-square'></i>                                                                                                        
+                    <i class='socialmedia-icon bx bxl-twitter' ></i>   
+                    <i class='socialmedia-icon bx bxl-instagram' ></i>
+                    <i class='socialmedia-icon bx bxl-github' ></i>  
+                </div>
+            </section>
+        </div>
+        <!-- Específicamos información personal de contacto del cliente a cargo de la página web -->
+        <div class="contact">
+            <div class="item-contact">
+                <i class='bx bx-copyright contact-icon' ></i>
+                <h3 class="contact-title">Notoriuos Design</h3>
+            </div>
+            <div class="item-contact">
+                <i class='bx bx-mail-send contact-icon' ></i>
+                <h3 class="contact-title">virus@notoriousdesign</h3>
+            </div>
+            <div class="item-contact">
+                <i class='bx bxs-edit-location contact-icon' ></i>
+                <h3 class="contact-title">Bogotá D.C</h3>
+            </div>
+            <div class="item-contact item-contact-gold">
+                <i class='bx bxs-chat contact-icon contact-icon-modifier' ></i>
+                <h3 class="contact-title">Contactanos ahora</h3>
+            </div>
+        </div>
+        <!-- Cargamos un archivo js de la biblioteca boxicoins que nos proporciona una serie de iconos vectoriales que pueden ser manipulados mediante código javascript -->
+        <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    </footer>
+    </section>
+</main>
+</body>
+</html>
